@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox - Guia Interativo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        h2 {
+            margin: 20px 0 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 5px;
+        }
+        
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .explanation {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .demo-container {
+            flex: 2;
+            min-width: 300px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .control-group {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        select, input {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .flex-container {
+            display: flex;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px dashed rgba(255, 255, 255, 0.5);
+            min-height: 200px;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .flex-item {
+            background: #fdbb2d;
+            color: #1a2a6c;
+            padding: 15px;
+            margin: 5px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-align: center;
+            min-width: 80px;
+            transition: all 0.3s ease;
+        }
+        
+        .flex-item:nth-child(2) {
+            background: #b21f1f;
+            color: white;
+        }
+        
+        .flex-item:nth-child(3) {
+            background: #1a2a6c;
+            color: white;
+        }
+        
+        .flex-item:nth-child(4) {
+            background: #2d8f53;
+            color: white;
+        }
+        
+        .code-display {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+        
+        .axis {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .property-explanation {
+            margin-top: 30px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .property-explanation h3 {
+            margin-bottom: 10px;
+            color: #fdbb2d;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>O que é Flexbox?</h1>
+            <p>Um modelo de layout CSS para criar designs flexíveis e responsivos</p>
+        </header>
+        
+        <div class="content">
+            <div class="explanation">
+                <h2>Conceito Básico</h2>
+                <p>Flexbox é um módulo de layout do CSS que permite organizar elementos em um container de maneira previsível, mesmo quando seus tamanhos são dinâmicos.</p>
+                
+                <p>O modelo Flexbox consiste em:</p>
+                <ul>
+                    <li><strong>Container Flex</strong>: Elemento pai com <code>display: flex</code></li>
+                    <li><strong>Itens Flex</strong>: Elementos filhos diretos do container</li>
+                </ul>
+                
+                <h2>Vantagens do Flexbox</h2>
+                <ul>
+                    <li>Facilita o alinhamento e distribuição de espaço entre itens</li>
+                    <li>Permite que os itens se ajustem para preencher o espaço disponível</li>
+                    <li>Simplifica a criação de layouts responsivos</li>
+                    <li>Oferece melhor controle sobre o alinhamento vertical</li>
+                </ul>
+                
+                <div class="property-explanation">
+                    <h3>Propriedades do Container</h3>
+                    <p><strong>flex-direction</strong>: Define a direção dos itens (linha ou coluna)</p>
+                    <p><strong>justify-content</strong>: Alinha os itens ao longo do eixo principal</p>
+                    <p><strong>align-items</strong>: Alinha os itens ao longo do eixo transversal</p>
+                    <p><strong>flex-wrap</strong>: Permite que os itens quebrem para a próxima linha</p>
+                </div>
+            </div>
+            
+            <div class="demo-container">
+                <h2>Demonstração Interativa</h2>
+                <p>Use os controles abaixo para ver o Flexbox em ação:</p>
+                
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="flexDirection">flex-direction</label>
+                        <select id="flexDirection">
+                            <option value="row">row (padrão)</option>
+                            <option value="row-reverse">row-reverse</option>
+                            <option value="column">column</option>
+                            <option value="column-reverse">column-reverse</option>
+                        </select>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="justifyContent">justify-content</label>
+                        <select id="justifyContent">
+                            <option value="flex-start">flex-start (padrão)</option>
+                            <option value="flex-end">flex-end</option>
+                            <option value="center">center</option>
+                            <option value="space-between">space-between</option>
+                            <option value="space-around">space-around</option>
+                            <option value="space-evenly">space-evenly</option>
+                        </select>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="alignItems">align-items</label>
+                        <select id="alignItems">
+                            <option value="stretch">stretch (padrão)</option>
+                            <option value="flex-start">flex-start</option>
+                            <option value="flex-end">flex-end</option>
+                            <option value="center">center</option>
+                            <option value="baseline">baseline</option>
+                        </select>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="flexWrap">flex-wrap</label>
+                        <select id="flexWrap">
+                            <option value="nowrap">nowrap (padrão)</option>
+                            <option value="wrap">wrap</option>
+                            <option value="wrap-reverse">wrap-reverse</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="axis">
+                    <span>Eixo Principal →</span>
+                    <span>↑ Eixo Transversal</span>
+                </div>
+                
+                <div class="flex-container" id="flexDemo">
+                    <div class="flex-item">Item 1</div>
+                    <div class="flex-item">Item 2</div>
+                    <div class="flex-item">Item 3</div>
+                    <div class="flex-item">Item 4</div>
+                </div>
+                
+                <div class="code-display" id="cssCode">
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Elementos DOM
+        const flexDemo = document.getElementById('flexDemo');
+        const cssCode = document.getElementById('cssCode');
+        const flexDirection = document.getElementById('flexDirection');
+        const justifyContent = document.getElementById('justifyContent');
+        const alignItems = document.getElementById('alignItems');
+        const flexWrap = document.getElementById('flexWrap');
+        
+        // Atualizar o CSS do container flex
+        function updateFlexbox() {
+            const direction = flexDirection.value;
+            const justify = justifyContent.value;
+            const align = alignItems.value;
+            const wrap = flexWrap.value;
+            
+            // Aplicar estilos ao container
+            flexDemo.style.flexDirection = direction;
+            flexDemo.style.justifyContent = justify;
+            flexDemo.style.alignItems = align;
+            flexDemo.style.flexWrap = wrap;
+            
+            // Atualizar o código exibido
+            cssCode.textContent = `.container {
+  display: flex;
+  flex-direction: ${direction};
+  justify-content: ${justify};
+  align-items: ${align};
+  flex-wrap: ${wrap};
+}`;
+        }
+        
+        // Adicionar event listeners
+        flexDirection.addEventListener('change', updateFlexbox);
+        justifyContent.addEventListener('change', updateFlexbox);
+        alignItems.addEventListener('change', updateFlexbox);
+        flexWrap.addEventListener('change', updateFlexbox);
+        
+        // Inicializar
+        updateFlexbox();
+    </script>
+</body>
+</html>
