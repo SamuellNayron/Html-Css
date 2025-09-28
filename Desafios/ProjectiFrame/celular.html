@@ -1,15 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Iframe</title>
-    <link rel="stylesheet" href="config.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Social</title>
+  <link rel="stylesheet" href="estilo/style.css">
+  <link rel="shortcut icon" type="image/x-icon" href="imagens/favicon.ico">
 </head>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
 <body>
-        <div id="celular">
-            <img id="configCelular" src="imagens/frame-iphone.png" alt="ImagemIphone">
-        </div>
+ <main>
+   <section class="celular">
+     <img src="imagens/frame-iphone.png" alt="">
+     <iframe src="telas/home.html" frameborder="0" name="home" id="home">
+     </iframe>
+     
+   </section>
+   <section class="bola">
+     <a href="telas/home.html" target="home">
+       <img src="imagens/logo-home.jpg" alt="Tela inicial">
+     </a>
+     <br>
+    <a href="telas/facebook.html" target="home">
+      <img src="imagens/logo-facebook.jpg" alt="Logo do facebook">
+    </a>
+    <br>
+    <a href="telas/youtube.html" target="home">
+    <img src="imagens/logo-youtube.jpg" alt="Logo do youtube">
+    </a>
+    <br>
+    <a href="telas/github.html" target="home">
+    <img src="imagens/logo-github.jpg" alt="Logo do github">
+    </a>
+    <br>
+    <a href="telas/instagram.html" target="home">
+    <img src="imagens/logo-instagram.jpg" alt="Logo do instagram">
+    </a>
+    <br>
+    <a href="telas/twitter.html" target="home">
+    <img src="imagens/logo-twitter.jpg" alt="Logo do twitter">
+    </a>
+   </section>
+ </main>
 </body>
+
 </html>

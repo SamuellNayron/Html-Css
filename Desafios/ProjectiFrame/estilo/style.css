@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background: black url(../imagens/fundo-madeira.jpg) top center no-repeat fixed;
+  background-size: cover;
+  overflow-y: hidden;
+}
+
+main {
+  position: relative;
+  height: 100vh;
+}
+
+section.bola {
+  text-align: right;
+}
+.bola img {
+  border-radius: 50%;
+  width: 100px;
+  margin: 10px;
+  box-shadow: 2px 2px 1px #0000004D;
+  box-sizing: border-box;
+}
+@media (max-width: 800px){
+  .bola img {
+    width: 50px;
+  }
+}
+.bola img:hover {
+  border: 1px solid white;
+  transform: translate(-3px, -3px);
+  box-shadow: 3px 3px 4px #00000080;
+  transition: transform 0.3s, border 0.3s;
+}
+
+a {
+  width: 100%;
+}
+
+.celular {
+  position: absolute;
+  
+  height: 627px;
+  width: 311px;
+  
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+@media (max-width: 800px){
+  section.celular {
+    width: 155.5px;
+    height: 313.5px;
+  }
+  .celular > img{
+    position: absolute;
+    
+    height: 323px;
+    width: 180px;
+    
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
+  }
+}
+
+#home {
+  position: relative;
+  
+  top: -552px;
+  left: 21px;
+  
+  width: 269px;
+  height: 475px;
+}
+@media (max-width: 800px) {
+  #home {
+  position: relative;
+  
+  top: 36px;
+  left: 0px;
+
+  width: 156px;
+  height: 244px;
+}
+}
