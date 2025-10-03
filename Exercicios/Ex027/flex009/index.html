@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexible Box</title>
+    <style>
+        div.container {
+            background-color: lightsalmon;
+
+            display: flex;
+            flex-flow: row nowrap;
+            
+        }
+        div.item {
+             
+            background-color: lightskyblue;
+            border: 1px solid black;
+            text-align: center;
+            flex-basis: 250px;
+            flex-shrink: 1;
+            flex-grow: 1;
+        }
+        #um {
+            flex-basis: 150px;
+            flex-grow: 0;
+            flex-shrink: 1;
+            
+        }
+        #dois {
+            flex-basis: 150px;
+            flex-grow: 2;
+            flex-shrink: 0;
+        }
+        #tres {
+            flex-basis: 150px;
+            flex-grow: 1;
+            flex-shrink: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item" id="um">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, repudiandae? Expedita, commodi omnis similique harum maxime asperiores aperiam quas, enim perspiciatis incidunt dolore cum ratione mollitia cupiditate officiis ut sit.</div>
+        <div  class="item" id ="dois">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum saepe aperiam error unde blanditiis. Neque ex exercitationem quam ipsam rerum illo error in illum cum ratione, quae voluptates velit iure?</div>
+        <div class="item" id="tres">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione vel veritatis delectus incidunt. Sit in sunt adipisci commodi dolores iste praesentium id nostrum velit doloribus doloremque, aperiam esse quaerat nihil? Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptatem molestiae! Praesentium sequi, quia esse magni sint enim harum ullam eveniet quidem ut corrupti deleniti tempora quo! Alias, sequi facilis? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla similique ipsa ducimus accusamus possimus blanditiis voluptatibus. Expedita facilis laborum laboriosam quod dolores? Cumque at, libero delectus repellat sequi consequatur maxime!</div>
+    </div>
+</body>
+</html>
